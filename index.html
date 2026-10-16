@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <script>
-function creerPluieTech() {
-  const symboles = ['✨', '⭐', '💫', '🕹️', '🎮', '🔮'];
-  
-  const goutte = document.createElement('span');
-  goutte.classList.add('pluie-element');
-  
-  goutte.innerText = symboles[Math.floor(Math.random() * symboles.length)];
-  goutte.style.left = Math.random() * 100 + 'vw';
-  goutte.style.animationDuration = Math.random() * 4 + 6 + 's';
-  goutte.style.fontSize = Math.random() * 6 + 12 + 'px';
-
-  document.body.appendChild(goutte);
-
-  setTimeout(() => {
-    goutte.remove();
-  }, 10000);
-}
-
-setInterval(creerPluieTech, 600);
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio - Sabrine Souissi</title>
   <meta name="description" content="Portfolio de Sabrine Souissi, étudiante en BTS SIO option SISR (réseaux).">
 
-  <!-- Police Poppins (nécessite Internet, sinon le navigateur utilise une police de secours) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css?v=2">
   <script src="js/script.js" defer></script>
+
+  <script>
+    function creerPluieTech() {
+      const symboles = ['✨', '⭐', '💫', '🕹️', '🎮', '🔮'];
+      const goutte = document.createElement('span');
+      goutte.classList.add('pluie-element');
+      goutte.innerText = symboles[Math.floor(Math.random() * symboles.length)];
+      goutte.style.left = Math.random() * 100 + 'vw';
+      goutte.style.animationDuration = Math.random() * 4 + 6 + 's';
+      goutte.style.fontSize = Math.random() * 6 + 12 + 'px';
+      document.body.appendChild(goutte);
+      setTimeout(() => { goutte.remove(); }, 10000);
+    }
+    setInterval(creerPluieTech, 600);
+  </script>
 </head>
 <body>
-<!-- Guirlande / Liane animée (Droite) -->
+
+<!-- Liane animée (Droite) -->
 <div class="liane-container liane-droite">
-  <svg class="liane-menu" viewBox="0 0 280 800">
+  <svg class="liane-menu" viewBox="0 0 100 800">
     <path class="tige-droite" d="M 85,0 C 55,100 95,200 60,350 C 40,500 90,650 75,800" />
   </svg>
-  
   <div class="fleurs">
     <span class="fleur-droite f1" style="top: 8%; right: 5px;">🪷</span>
     <span class="fleur-droite f2" style="top: 20%; right: 6px;">🌺</span>
@@ -54,49 +47,37 @@ setInterval(creerPluieTech, 600);
   </div>
 </div>
 
-<!--
-  ============================================================
-  MODE D'EMPLOI RAPIDE
-  - Tout ce qui est marqué ✏️ est à modifier par toi.
-  - Ne touche pas aux mots entre < > ni aux class="..." :
-    change seulement le texte qui est ENTRE les balises.
-  - Exemple : <h3>Mon titre</h3> -> change "Mon titre".
-  - Pour plus de détails, lis le fichier LISEZMOI.md
-  ============================================================
--->
-
-<!-- ===================== MENU À GAUCHE ===================== -->
+<!-- MENU À GAUCHE -->
 <button class="menu-bouton" id="menu-bouton" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
   Menu
 </button>
 
 <nav class="menu" id="menu" aria-label="Navigation principale">
-<!-- Guirlande / Liane animée sur le menu (Gauche) -->
-<div class="liane-container liane-gauche">
-  <svg class="liane-menu" viewBox="0 0 280 800" preserveAspectRatio="none">
-    <path class="tige-gauche" d="M 260,18 C 220,5 190,28 150,12 C 110,-2 70,25 25,12 C 5,28 32,80 12,150 C -5,220 30,280 10,360 C -8,440 28,520 12,620 C -2,700 25,740 15,800" />
-  </svg>
-  
-  <div class="fleurs">
-    <span class="fleur f0" style="top: 1.1%; left: 200px;">🌸</span>
-    <span class="fleur f01" style="top: 1%; left: 100px;">🌺</span>
-    <span class="fleur f1" style="top: 12%; left: 14px;">🌸</span>
-    <span class="fleur f2" style="top: 36%; left: 12px;">🌺</span>
-    <span class="fleur f3" style="top: 56%; left: 8px;">🌸</span>
-    <span class="fleur f4" style="top: 76%; left: 9px;">🌺</span>
-    <span class="fleur f5" style="top: 92%; left: 10px;">🌸</span>
+  <!-- Liane animée sur le menu (Gauche) -->
+  <div class="liane-container liane-gauche">
+    <svg class="liane-menu" viewBox="0 0 280 800">
+      <path class="tige-gauche" d="M 260,18 C 220,5 190,28 150,12 C 110,-2 70,25 25,12 C 5,28 32,80 12,150 C -5,220 30,280 10,360 C -8,440 28,520 12,620 C -2,700 25,740 15,800" />
+    </svg>
+    <div class="fleurs">
+      <span class="fleur f0" style="top: 1.1%; left: 200px;">🌸</span>
+      <span class="fleur f01" style="top: 1%; left: 100px;">🌺</span>
+      <span class="fleur f1" style="top: 12%; left: 14px;">🌸</span>
+      <span class="fleur f2" style="top: 36%; left: 12px;">🌺</span>
+      <span class="fleur f3" style="top: 56%; left: 8px;">🌸</span>
+      <span class="fleur f4" style="top: 76%; left: 9px;">🌺</span>
+      <span class="fleur f5" style="top: 92%; left: 10px;">🌸</span>
+    </div>
   </div>
-</div>
 
-<!-- Bouton Mode Sombre -->
-<div class="theme-switch-container">
-  <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
-    <span class="icon-theme">🌙</span>
-    <span class="texte-theme">Mode Sombre</span>
-  </button>
-</div>
+  <!-- Bouton Mode Sombre -->
+  <div class="theme-switch-container">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+      <span class="icon-theme">🌙</span>
+      <span class="texte-theme">Mode Sombre</span>
+    </button>
+  </div>
+
   <div class="menu-profil">
-    <!-- ✏️ Pour ta vraie photo : mets-la dans le dossier img/ et change le nom du fichier ci-dessous -->
     <img src="img/profil.jpg" alt="Photo de Sabrine Souissi" class="photo photo-menu">
     <p class="menu-nom">Sabrine Souissi</p>
     <p class="menu-role">Étudiante en BTS SIO<br>Option SISR</p>
@@ -121,37 +102,32 @@ setInterval(creerPluieTech, 600);
   </ul>
 </nav>
 
-<!-- ===================== CONTENU ===================== -->
+<!-- CONTENU PRINCIPAL -->
 <main>
 
-  <!-- ---------- ACCUEIL ---------- -->
+  <!-- ACCUEIL -->
   <section id="accueil" class="section section-accueil">
     <div class="accueil-texte">
       <p class="surtitre">Portfolio</p>
       <h1>Sabrine Souissi</h1>
       <p class="accueil-metier">Étudiante en informatique<br>Systèmes et réseaux</p>
-      <!-- ✏️ Adapte l'année quand tu passes en 2e année -->
       <p class="accueil-formation">1re année de BTS SIO, option SISR</p>
 
       <div class="boutons">
         <a class="bouton" href="#projets-personnels">Voir les projets</a>
-        <!-- ✏️ Mets ton CV en PDF dans le dossier docs/ avec le nom cv.pdf -->
         <a class="bouton" href="docs/CV.pdf" target="_blank" rel="noopener">Voir mon CV</a>
         <a class="bouton" href="#contact">Me contacter</a>
       </div>
     </div>
-
     <img src="img/profil.jpg" alt="Photo de Sabrine Souissi" class="photo photo-accueil">
   </section>
 
-  <!-- ---------- À PROPOS ---------- -->
+  <!-- À PROPOS -->
   <section id="apropos" class="section section-claire">
     <p class="surtitre">À propos de moi</p>
     <h2>Profil</h2>
-
     <div class="deux-colonnes">
       <div class="texte">
-        <!-- ✏️ Écris ici ta présentation avec tes mots. Un paragraphe = une balise <p>...</p> -->
         <p>
           Après plusieurs années dans la <strong>vente et le conseil en magasin/animalerie</strong>, j'ai choisi
           de me reconvertir dans l'informatique. J'ai obtenu le titre de
@@ -171,7 +147,6 @@ setInterval(creerPluieTech, 600);
 
       <aside class="encart">
         <h3>Recherche de stage</h3>
-        <!-- ✏️ Remplace les crochets [ ] par tes vraies informations -->
         <p>
           Actuellement en BTS SIO option SISR.
           Je recherche un stage de <strong>4 à 5 semaines</strong> axé sur
@@ -180,7 +155,7 @@ setInterval(creerPluieTech, 600);
         </p>
       </aside>
     </div>
-    <!-- ✏️ Mets tes vrais chiffres dans les <p class="chiffre"> -->
+
     <ul class="stats">
       <li><p class="chiffre">3</p><p>Projets réalisés</p></li>
       <li><p class="chiffre">1</p><p>Projet à venir</p></li>
@@ -189,15 +164,11 @@ setInterval(creerPluieTech, 600);
     </ul>
   </section>
 
-  <!-- ---------- PARCOURS ---------- -->
+  <!-- PARCOURS -->
   <section id="parcours" class="section">
     <p class="surtitre">Formation et expériences</p>
     <h2>Parcours</h2>
 
-    <!--
-      ✏️ POUR AJOUTER UNE ÉTAPE : copie un bloc <li> ... </li> entier et colle-le
-      en dessous. Les étapes se placent toutes seules à gauche puis à droite.
-    -->
     <ol class="frise">
       <li>
         <p class="pastille">Septembre 2026 - en cours...</p><span class="point"></span>
@@ -251,7 +222,7 @@ setInterval(creerPluieTech, 600);
     </ol>
   </section>
 
-  <!-- ---------- COMPÉTENCES ---------- -->
+  <!-- COMPÉTENCES -->
   <section id="competences" class="section section-claire">
     <p class="surtitre">En cours d'acquisition</p>
     <h2>Compétences</h2>
@@ -295,7 +266,7 @@ setInterval(creerPluieTech, 600);
     </div>
   </section>
 
-  <!-- ---------- CERTIFICATIONS ---------- -->
+  <!-- CERTIFICATIONS -->
   <section id="certifications" class="section">
     <p class="surtitre">Formation complémentaire</p>
     <h2>Certifications</h2>
@@ -320,25 +291,19 @@ setInterval(creerPluieTech, 600);
     </div>
   </section>
 
-  <!-- ---------- PROJETS PERSONNELS ---------- -->
+  <!-- PROJETS PERSONNELS -->
   <section id="projets-personnels" class="section">
     <p class="surtitre">Projets</p>
     <h2>Projets personnels</h2>
 
     <div class="liste-projets">
-      <!--
-        ✏️ Ici viendront tes réalisations personnelles.
-        Utilise le même modèle <article class="projet"> que ci-dessus.
-        Pense à retirer les informations confidentielles de l'entreprise
-        (adresses IP, noms de machines, mots de passe...).
-      -->
       <article class="projet">
         <h3>Script d'archivage & d'organisation de photos iOS (PowerShell)</h3>
         <ul class="tags">
-            <li>PowerShell</li>
-            <li>GUI</li>
-            <li>Bash</li>
-            <li>Automatisation</li>
+          <li>PowerShell</li>
+          <li>GUI</li>
+          <li>Bash</li>
+          <li>Automatisation</li>
         </ul>
         <p>Développement d'un outil d'archivage avec interface graphique (GUI) pour transférer, organiser et synchroniser automatiquement les photos d'un appareil iOS vers un stockage Windows.</p>
         <details>
@@ -355,17 +320,16 @@ setInterval(creerPluieTech, 600);
       <article class="projet">
         <h3>Serveur DNS & bloqueur de publicités réseau</h3>
         <ul class="tags">
-            <li>DNS</li>
-            <li>Proxmox</li>
-            <li>Bloqueur de pub</li>
+          <li>DNS</li>
+          <li>Proxmox</li>
+          <li>Bloqueur de pub</li>
         </ul>
         <p>Mise en place d'un serveur DNS local pour le filtrage du trafic réseau, la protection contre le suivi et l'optimisation des requêtes DNS du réseau.</p>
       </article>
-
     </div>
   </section>
 
-  <!-- ---------- PROJETS SCOLAIRES ---------- -->
+  <!-- PROJETS SCOLAIRES -->
   <section id="projets-scolaires" class="section section-claire">
     <p class="surtitre">Projets</p>
     <h2>Projets scolaires</h2>
@@ -391,11 +355,10 @@ setInterval(creerPluieTech, 600);
           </div>
         </details>
       </article>
-      
     </div>
   </section>
 
-  <!-- ---------- PROJETS PROFESSIONNELS ---------- -->
+  <!-- PROJETS PROFESSIONNELS -->
   <section id="projets-pro" class="section">
     <p class="surtitre">Projets</p>
     <h2>Projets professionnels</h2>
@@ -422,7 +385,7 @@ setInterval(creerPluieTech, 600);
     </div>
   </section>
 
-  <!-- ---------- VEILLE TECHNOLOGIQUE ---------- -->
+  <!-- VEILLE TECHNOLOGIQUE -->
   <section id="veille" class="section section-claire">
     <p class="surtitre">Rester informée</p>
     <h2>Veille technologique</h2>
@@ -441,7 +404,7 @@ setInterval(creerPluieTech, 600);
     </div>
   </section>
 
-  <!-- ---------- CONTACT ---------- -->
+  <!-- CONTACT -->
   <section id="contact" class="section">
     <p class="surtitre">Échangeons ensemble</p>
     <h2>Contact</h2>
@@ -475,6 +438,7 @@ setInterval(creerPluieTech, 600);
   </footer>
 
 </main>
+
 <script>
   const toggleBtn = document.getElementById('theme-toggle');
   const iconTheme = document.querySelector('.icon-theme');
@@ -488,7 +452,6 @@ setInterval(creerPluieTech, 600);
 
   toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    
     if (document.body.classList.contains('dark-mode')) {
       localStorage.setItem('theme', 'dark');
       iconTheme.textContent = '☀️';
@@ -500,5 +463,6 @@ setInterval(creerPluieTech, 600);
     }
   });
 </script>
+
 </body>
 </html>
