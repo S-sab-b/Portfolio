@@ -4,17 +4,19 @@
    ===================================================================== */
 
 :root {
-  --menu-fond: #7a5aa8;        /* fond du menu à gauche (violet lilas) */
-  --menu-texte: #f6f0ff;       /* texte du menu */
-  --menu-actif: #ffffff;       /* lien du menu actif */
+  --menu-fond: #6e4e9e;        /* Violet lilas pour le menu */
+  --menu-texte: #f6f0ff;       /* Texte du menu */
+  --menu-actif: #ffffff;       /* Lien actif */
 
-  --fond: #faf8fc;             /* fond principal (blanc cassé très légèrement teinté lilas) */
-  --fond-2: #f2ebf7;           /* fond des sections alternées */
-  --texte: #2d2438;            /* texte principal */
-  --texte-doux: #6b5c7d;       /* texte secondaire */
-  --titre: #3c2856;            /* titres en violet très foncé pour un fort contraste */
-  --accent: #7a5aa8;           /* violet principal pour les liens, boutons et accents */
-  --bordure: #e5dcf0;          /* bordures douces lilas */
+  /* ARRIÈRE-PLANS ADOUCIS DANS LES TONS VIOLETS PASTELS */
+  --fond: #f3ebf7;             /* Fond principal adouci */
+  --fond-2: #e8dcf2;           /* Fond des sections alternées */
+  
+  --texte: #2d2438;            /* Texte principal */
+  --texte-doux: #5b4b6e;       /* Texte secondaire */
+  --titre: #351f50;            /* Titres foncés */
+  --accent: #6e4e9e;           /* Violet principal */
+  --bordure: #d8c8e8;          /* Bordures douces */
 
   --police: "Poppins", "Segoe UI", Arial, sans-serif;
   --largeur-menu: 280px;
@@ -416,4 +418,224 @@ summary {
   .frise > li .etape, .frise > li:nth-child(odd) .etape, .frise > li:nth-child(even) .etape { grid-column: 2; grid-row: 2; }
   .contact { grid-template-columns: 1fr; }
   .certif { flex-wrap: wrap; }
+}
+/* =====================================================================
+   ANIMATION PLUIE DOUCE TECH
+   ===================================================================== */
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.pluie-element {
+  position: fixed;
+  top: -20px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.35;
+  animation: tomberLentement linear forwards;
+}
+
+@keyframes tomberLentement {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.35;
+  }
+  80% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(105vh) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* =====================================================================
+   LIANE VEGETALE ANIMEE (GAUCHE ET DROITE)
+   ===================================================================== */
+
+.liane-container {
+  position: absolute;
+  top: 0;
+  width: 45px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.liane-gauche {
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tige-gauche {
+  fill: none;
+  stroke: #72b06f;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: pousserLiane 3s ease-out forwards;
+}
+
+.liane-gauche .f0 { animation-delay: 0.2s; }
+.liane-gauche .f01 { animation-delay: 0.5s; }
+.liane-gauche .f1 { animation-delay: 0.9s; }
+.liane-gauche .f2 { animation-delay: 1.3s; }
+.liane-gauche .f3 { animation-delay: 1.8s; }
+.liane-gauche .f4 { animation-delay: 2.3s; }
+.liane-gauche .f5 { animation-delay: 2.8s; }
+
+.liane-droite {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 65px;
+  height: 100vh;
+  z-index: 10;
+}
+
+.liane-menu {
+  width: 100%;
+  height: 100%;
+}
+
+.tige {
+  fill: none;
+  stroke: #72b06f;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: pousserLiane 3s ease-out forwards;
+}
+
+.tige-droite {
+  fill: none;
+  stroke: #72b06f;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: pousserLiane 3s ease-out forwards;
+}
+
+@keyframes pousserLiane {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.fleurs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fleur {
+  position: absolute;
+  font-size: 16px;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0);
+  animation: eclosionFleur 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.fleur-droite {
+  position: absolute;
+  font-size: 24px;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0);
+  animation: eclosionFleur 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.liane-droite .f1 { animation-delay: 0.4s; }
+.liane-droite .f2 { animation-delay: 0.7s; }
+.liane-droite .f3 { animation-delay: 1.1s; }
+.liane-droite .f4 { animation-delay: 1.4s; }
+.liane-droite .f5 { animation-delay: 1.8s; }
+.liane-droite .f6 { animation-delay: 2.1s; }
+.liane-droite .f7 { animation-delay: 2.5s; }
+.liane-droite .f8 { animation-delay: 2.8s; }
+
+@keyframes eclosionFleur {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .liane-container {
+    display: none;
+  }
+}
+
+.carte, .encart, .projet, .etape, .stats li, .certif, .contact-infos li, .formulaire input, .formulaire textarea {
+  background: #faf5fc;
+  border-color: var(--bordure);
+}
+
+/* =====================================================================
+   MODE SOMBRE (DARK MODE)
+   ===================================================================== */
+
+body.dark-mode {
+  --fond: #1e1828;
+  --fond-2: #282035;
+  --texte: #e6ddf2;
+  --texte-doux: #b0a0c8;
+  --titre: #f0e6ff;
+  --accent: #a888db;
+  --bordure: #3e3250;
+}
+
+body.dark-mode .carte,
+body.dark-mode .encart,
+body.dark-mode .projet,
+body.dark-mode .etape,
+body.dark-mode .stats li,
+body.dark-mode .certif,
+body.dark-mode .contact-infos li,
+body.dark-mode .formulaire input,
+body.dark-mode .formulaire textarea,
+body.dark-mode .outil {
+  background: #251e30 !important;
+  color: var(--texte) !important;
+  border-color: var(--bordure) !important;
+}
+
+body.dark-mode .logo {
+  background: #181320 !important;
+  color: var(--accent) !important;
+}
+
+.theme-switch-container {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--menu-texte);
+  font-family: var(--police);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
