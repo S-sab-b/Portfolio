@@ -462,24 +462,26 @@ summary {
   overflow: visible;
 }
 
+/* Tige de gauche étirée */
 .tige-gauche {
   fill: none !important;
   stroke: #72b06f;
   stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 1400;
-  stroke-dashoffset: 1400;
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
   animation: pousserLiane 3s ease-out forwards;
 }
 
+/* Tige de droite étirée */
 .tige-droite {
   fill: none !important;
   stroke: #72b06f;
   stroke-width: 8;
   stroke-linecap: round;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
   animation: pousserLiane 3s ease-out forwards;
 }
 
