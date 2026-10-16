@@ -464,6 +464,7 @@ body {
   z-index: 2;
 }
 
+/* Liane de gauche */
 .liane-gauche {
   left: 0;
   width: 100%;
@@ -471,12 +472,13 @@ body {
 }
 
 .tige-gauche {
-  fill: none;
+  fill: none !important; /* Empeche le remplissage noir */
   stroke: #72b06f;
   stroke-width: 5;
   stroke-linecap: round;
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
+  stroke-linejoin: round;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
   animation: pousserLiane 3s ease-out forwards;
 }
 
@@ -488,6 +490,7 @@ body {
 .liane-gauche .f4 { animation-delay: 2.3s; }
 .liane-gauche .f5 { animation-delay: 2.8s; }
 
+/* Liane de droite */
 .liane-droite {
   position: fixed;
   right: 0;
@@ -500,20 +503,11 @@ body {
 .liane-menu {
   width: 100%;
   height: 100%;
-}
-
-.tige {
-  fill: none;
-  stroke: #72b06f;
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: pousserLiane 3s ease-out forwards;
+  overflow: visible;
 }
 
 .tige-droite {
-  fill: none;
+  fill: none !important; /* Empeche le remplissage noir */
   stroke: #72b06f;
   stroke-width: 8;
   stroke-linecap: round;
@@ -528,6 +522,7 @@ body {
   }
 }
 
+/* Fleurs */
 .fleurs {
   position: absolute;
   top: 0;
@@ -579,6 +574,65 @@ body {
 .carte, .encart, .projet, .etape, .stats li, .certif, .contact-infos li, .formulaire input, .formulaire textarea {
   background: #faf5fc;
   border-color: var(--bordure);
+}
+
+/* =====================================================================
+   MODE SOMBRE (DARK MODE)
+   ===================================================================== */
+
+body.dark-mode {
+  --fond: #1e1828;
+  --fond-2: #282035;
+  --texte: #e6ddf2;
+  --texte-doux: #b0a0c8;
+  --titre: #f0e6ff;
+  --accent: #a888db;
+  --bordure: #3e3250;
+}
+
+body.dark-mode .carte,
+body.dark-mode .encart,
+body.dark-mode .projet,
+body.dark-mode .etape,
+body.dark-mode .stats li,
+body.dark-mode .certif,
+body.dark-mode .contact-infos li,
+body.dark-mode .formulaire input,
+body.dark-mode .formulaire textarea,
+body.dark-mode .outil {
+  background: #251e30 !important;
+  color: var(--texte) !important;
+  border-color: var(--bordure) !important;
+}
+
+body.dark-mode .logo {
+  background: #181320 !important;
+  color: var(--accent) !important;
+}
+
+.theme-switch-container {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--menu-texte);
+  font-family: var(--police);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* =====================================================================
