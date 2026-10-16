@@ -249,8 +249,11 @@
       <div>
         <h3 class="groupe-titre">Services et administration</h3>
         <ul class="outils">
-          <li class="outil"><span class="logo"><img src="img/Compétences/Services et administration/GLPI.png" alt=""></span>GLPI<br>⭐⭐</li>
-          <li class="outil"><span class="logo"><img src="img/Compétences/Services et administration/isilog.jpg" alt=""></span>ISILOG<br>⭐⭐</li>
+          <li class="outil"><span class="logo"><img src="img/Compétences/Services et administration/GLPI.png" alt=""></span>GLPI<br>⭐⭐</li
+  <li class="outil cliquable" onclick="ouvrirModal('ISILOG', 'ISILOG m\'a été utile lors de mon stage au GHEF pour la gestion des tickets d\'incidents, le suivi des demandes utilisateurs et l\'inventaire du parc informatique.')">
+  <span class="logo"><img src="img/Compétences/Services et administration/isilog.jpg" alt="Logo ISILOG"></span>
+  ISILOG<br>⭐⭐
+</li>
         </ul>
       </div>
       <div>
@@ -462,7 +465,31 @@
       texteTheme.textContent = 'Mode Sombre';
     }
   });
+  function ouvrirModal(titre, texte) {
+  document.getElementById('modal-titre').innerText = titre;
+  document.getElementById('modal-texte').innerText = texte;
+  document.getElementById('modal-competence').classList.add('active');
+}
+
+function fermerModal(event) {
+  if (event.target.id === 'modal-competence') {
+    document.getElementById('modal-competence').classList.remove('active');
+  }
+}
+
+function fermerModalForce() {
+  document.getElementById('modal-competence').classList.remove('active');
+}
 </script>
 
+<!-- Fenêtre Modale (Pop-up Compétence) -->
+<div id="modal-competence" class="modal" onclick="fermerModal(event)">
+  <div class="modal-contenu">
+    <span class="modal-fermer" onclick="fermerModalForce()">&times;</span>
+    <h3 id="modal-titre">Titre</h3>
+    <p id="modal-texte">Description...</p>
+  </div>
+</div>
+  
 </body>
 </html>
