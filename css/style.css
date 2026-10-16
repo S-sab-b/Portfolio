@@ -598,3 +598,87 @@ body.dark-mode .logo {
 .theme-toggle:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
+/* =====================================================================
+   POP-UP COMPÉTENCES (MODALE)
+   ===================================================================== */
+
+.outil.cliquable {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.outil.cliquable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(110, 78, 158, 0.25);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 15, 30, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-contenu {
+  position: relative;
+  background: #faf5fc;
+  color: var(--texte);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--bordure);
+  max-width: 450px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.modal.active .modal-contenu {
+  transform: scale(1);
+}
+
+.modal-contenu h3 {
+  color: var(--titre);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.modal-contenu p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.modal-fermer {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--texte-doux);
+  cursor: pointer;
+}
+
+.modal-fermer:hover {
+  color: var(--accent);
+}
+
+body.dark-mode .modal-contenu {
+  background: #251e30 !important;
+  color: var(--texte) !important;
+  border-color: var(--bordure) !important;
+}
