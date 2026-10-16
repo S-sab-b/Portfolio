@@ -639,3 +639,15 @@ body.dark-mode .logo {
 .theme-toggle:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
+.liane-menu {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* S'assurer que le trait ne se déforme pas */
+.tige-gauche, .tige-droite {
+  vector-effect: non-scaling-stroke; /* Empêche l'épaisseur du trait de se déformer */
+}
