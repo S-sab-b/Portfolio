@@ -464,11 +464,26 @@ body {
   z-index: 2;
 }
 
-/* Liane de gauche */
+/* Liane de gauche fixée et calée sur la largeur exacte du menu */
 .liane-gauche {
+  position: fixed;
+  top: 0;
   left: 0;
+  width: var(--largeur-menu); /* Se cale exactement sur 280px */
+  height: 100vh;
+  z-index: 21;
+}
+
+/* Formatage propre des conteneurs SVG */
+.liane-menu {
   width: 100%;
   height: 100%;
+  overflow: visible;
+}
+
+/* Conserve la finesse du trait lors du redimensionnement de la fenêtre */
+.tige-gauche, .tige-droite {
+  vector-effect: non-scaling-stroke;
 }
 
 .tige-gauche {
