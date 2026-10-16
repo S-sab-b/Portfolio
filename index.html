@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <script>
+function creerPluieTech() {
+  const symboles = ['✨', '⭐', '💫', '🕹️', '🎮', '🔮'];
+  
+  const goutte = document.createElement('span');
+  goutte.classList.add('pluie-element');
+  
+  goutte.innerText = symboles[Math.floor(Math.random() * symboles.length)];
+  goutte.style.left = Math.random() * 100 + 'vw';
+  goutte.style.animationDuration = Math.random() * 4 + 6 + 's';
+  goutte.style.fontSize = Math.random() * 6 + 12 + 'px';
+
+  document.body.appendChild(goutte);
+
+  setTimeout(() => {
+    goutte.remove();
+  }, 10000);
+}
+
+setInterval(creerPluieTech, 600);
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio - Sabrine Souissi</title>
@@ -15,6 +36,23 @@
   <script src="js/script.js" defer></script>
 </head>
 <body>
+<!-- Guirlande / Liane animée (Droite - Plus grosse et plus garnie) -->
+<div class="liane-container liane-droite">
+  <svg class="liane-menu" viewBox="0 0 100 800" preserveAspectRatio="none">
+    <path class="tige-droite" d="M 85,0 C 55,100 95,200 60,350 C 40,500 90,650 75,800" />
+  </svg>
+  
+  <div class="fleurs">
+    <span class="fleur-droite f1" style="top: 8%; right: 5px;">🪷</span>
+    <span class="fleur-droite f2" style="top: 20%; right: 6px;">🌺</span>
+    <span class="fleur-droite f3" style="top: 33%; right: 5px;">🌸</span>
+    <span class="fleur-droite f4" style="top: 45%; right: 20px;">🪷</span>
+    <span class="fleur-droite f5" style="top: 58%; right: 18px;">🌺</span>
+    <span class="fleur-droite f6" style="top: 70%; right: 0px;">🌸</span>
+    <span class="fleur-droite f7" style="top: 82%; right: 12px;">🪷</span>
+    <span class="fleur-droite f8" style="top: 93%; right: 5px;">🌸</span>
+  </div>
+</div>
 
 <!--
   ============================================================
@@ -33,6 +71,30 @@
 </button>
 
 <nav class="menu" id="menu" aria-label="Navigation principale">
+<!-- Guirlande / Liane animée sur le menu (Gauche) -->
+<div class="liane-container liane-gauche">
+  <svg class="liane-menu" viewBox="0 0 280 800" preserveAspectRatio="none">
+    <path class="tige-gauche" d="M 260,18 C 220,5 190,28 150,12 C 110,-2 70,25 25,12 C 5,28 32,80 12,150 C -5,220 30,280 10,360 C -8,440 28,520 12,620 C -2,700 25,740 15,800" />
+  </svg>
+  
+  <div class="fleurs">
+    <span class="fleur f0" style="top: 1.1%; left: 200px;">🌸</span>
+    <span class="fleur f01" style="top: 1%; left: 100px;">🌺</span>
+    <span class="fleur f1" style="top: 12%; left: 14px;">🌸</span>
+    <span class="fleur f2" style="top: 36%; left: 12px;">🌺</span>
+    <span class="fleur f3" style="top: 56%; left: 8px;">🌸</span>
+    <span class="fleur f4" style="top: 76%; left: 9px;">🌺</span>
+    <span class="fleur f5" style="top: 92%; left: 10px;">🌸</span>
+  </div>
+</div>
+
+<!-- Bouton Mode Sombre -->
+<div class="theme-switch-container">
+  <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+    <span class="icon-theme">🌙</span>
+    <span class="texte-theme">Mode Sombre</span>
+  </button>
+</div>
   <div class="menu-profil">
     <!-- ✏️ Pour ta vraie photo : mets-la dans le dossier img/ et change le nom du fichier ci-dessous -->
     <img src="img/profil.jpg" alt="Photo de Sabrine Souissi" class="photo photo-menu">
@@ -413,6 +475,30 @@
   </footer>
 
 </main>
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const iconTheme = document.querySelector('.icon-theme');
+  const texteTheme = document.querySelector('.texte-theme');
 
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    iconTheme.textContent = '☀️';
+    texteTheme.textContent = 'Mode Clair';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    
+    if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+      iconTheme.textContent = '☀️';
+      texteTheme.textContent = 'Mode Clair';
+    } else {
+      localStorage.setItem('theme', 'light');
+      iconTheme.textContent = '🌙';
+      texteTheme.textContent = 'Mode Sombre';
+    }
+  });
+</script>
 </body>
 </html>
