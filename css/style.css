@@ -149,7 +149,9 @@ h3 { font-size: 1.15rem; color: var(--texte); }
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  min-height: 100vh;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  min-height: auto; /* Supprime l'obligation de faire 100% de la hauteur */
 }
 
 .section-accueil > * { max-width: none; }
