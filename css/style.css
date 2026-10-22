@@ -150,7 +150,8 @@ h3 { font-size: 1.15rem; color: var(--texte); }
   justify-content: space-between;
   gap: 3rem;
   min-height: auto !important;
-  padding-bottom: 1rem !important;        /* Colle la fin de l'accueil au bloc suivant */
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important; /* Ajoute un bel espace sous les boutons */
 }
 
 .section-accueil > * { max-width: none; }
